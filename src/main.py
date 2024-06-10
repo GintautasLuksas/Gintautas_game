@@ -1,32 +1,5 @@
-class Stats:
-    def __init__(self, HP, MP, STR, AGI, GEAR, INVENTORY, GOLD):
-        self.hp = HP
-        self.mp = MP
-        self.str = STR
-        self.agi = AGI
-        self.gear = GEAR
-        self.inventory = INVENTORY
-        self.gold = GOLD
-
-    def __str__(self):
-        return (f"HP: {self.hp}, MP: {self.mp}\n"
-                f"STR: {self.str}, AGI: {self.agi}\n"
-                f"GEAR: {self.gear}\n"
-                f"INVENTORY: {self.inventory}\n"
-                f"GOLD: {self.gold}")
-
-class Monster:
-    def __init__(self, name: str, life: int, damage: int):
-        self.name = name
-        self.life = life
-        self.damage = damage
-
-    def attack(self, hit_to_monster):
-        self.life -= hit_to_monster
-
-    def loot(self, inventory, item):
-        inventory.append(item)
-
+import Stats
+import Monster
 import random
 
 player_stats = Stats(100, 100, 10, 5, ['Leather gloves', 'Leather boots', 'Leather armor', 'Bronze sword'], [], 0)
