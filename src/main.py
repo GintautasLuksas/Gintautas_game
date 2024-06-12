@@ -1,11 +1,14 @@
 import Stats
-import Monster
+import Inventory
+import Gold
+from src.Monsters import base_monster
 import random
 
 player_stats = Stats(100, 100, 10, 5, ['Leather gloves', 'Leather boots', 'Leather armor', 'Bronze sword'], [], 0)
+player_inventory = Inventory
 
 #Monster Whelp Fight
-whelp = Monster('Whelp', 20, 10)
+whelp = base_monster('Whelp', 20, 10)
 while True:
     attack = random.randint(1, 4)
     user_input = int(input('''
@@ -77,7 +80,7 @@ def main_menu():
             print('Wrong entry. Try again.')
             continue
 
-def save_game(player_stats):
+def save_game(player_stats, player_inventory):
     # Content to be written to the file
     content = f"""# User stats
 HP = {player_stats.hp}
@@ -87,9 +90,8 @@ MP = {player_stats.mp}
 STR = {player_stats.str}
 AGI = {player_stats.agi}
 
-# Gear
-GEAR = {player_stats.gear}
-INVENTORY = {player_stats.inventory}
+# Inventory
+INVENTORY = {player_inventory}
 
 # Currency
 GOLD = {player_stats.gold}
@@ -97,7 +99,6 @@ GOLD = {player_stats.gold}
     with open('Saved.txt', 'w') as file:
         file.write(content)
     print("Game saved successfully!")
-
 def load_game():
     global player_stats
     try:
