@@ -1,10 +1,10 @@
+from src.Gold import Gold
 class Stats:
     def __init__(self, HP, MP, STR, AGI, gold_amount):
         self.hp = HP
         self.mp = MP
         self.str = STR
         self.agi = AGI
-        self.gear = Inventory()
         self.gold = Gold(gold_amount)
 
     def __str__(self):
