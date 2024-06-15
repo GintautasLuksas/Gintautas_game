@@ -17,16 +17,16 @@ def main_menu():
         3. Game information.
         4. Quit
         Your choice: ''').lower()
-        if user_choice == 'new game':
+        if user_choice == '1':
             new_game()
             return True
-        elif user_choice == 'load game':
+        elif user_choice == '2':
             load_game()
             return True
-        elif user_choice == 'game information':
+        elif user_choice == '3':
             game_information()
             return True
-        elif user_choice == 'quit':
+        elif user_choice == '4':
             print('Quit')
             return True
         else:
@@ -97,55 +97,55 @@ def new_game():
 
 
 # Monster Whelp Fight
-whelp = BaseMonster('Whelp', 20, 10)
-while True:
-    attack = random.randint(1, 4)
-    user_input = int(input('''
-The fight is on. Choose your action:
-1. Stay at place, so you can attack.
-2. Move left to avoid fire.
-3. Move right to avoid it jumping on you.
-4. Hide behind rock to avoid flight attack..'''))
-
-    if user_input == 1 and attack == 1:
-        print(
-            'You hide behind rock, whelp tried to get in the air and hit you with his face, but hit rock. It is dead!')
-        whelp.add_loot('Bronze Helm')
-        print(f'''
-        You defeated the monster and got a Bronze Helm!
-        Inventory update: {player_inventory}''')
-        break
-    elif user_input == 2 and attack == 2:
-        print(
-            'You hide behind rock, whelp tried to get in the air and hit you with his face, but hit rock. It is dead!')
-        whelp.add_loot('Bronze Helm')
-        print(f'''
-        You defeated the monster and got a Bronze Helm!
-        Inventory update: {player_inventory}''')
-        break
-    elif user_input == 3 and attack == 3:
-        print(
-            'You hide behind rock, whelp tried to get in the air and hit you with his face, but hit rock. It is dead!')
-        whelp.add_loot('Bronze Helm')
-        print(f'''
-        You defeated the monster and got a Bronze Helm!
-        Inventory update: {player_inventory}''')
-        break
-    elif user_input == 4 and attack == 4:
-        print('''You hide behind rock, whelp tried to get in the air and hit you with his face, 
-        but hit rock. It is dead!''')
-        whelp.add_loot('Bronze Helm')
-        print(f'''
-You defeated the monster and got a Bronze Helm!
-Inventory update: {player_inventory}''')
-        break
-    else:
-        print(f'Oh no! You guessed {user_input} scenario. But the dragon had {attack} scenario!')
-        player_stats.hp -= whelp.damage
-        print(f'You have {player_stats.hp} left!')
-        if player_stats.hp <= 0:
-            print("You died!")
-            continue
+# whelp = BaseMonster('Whelp', 20, 10)
+# while True:
+#     attack = random.randint(1, 4)
+#     user_input = int(input('''
+# The fight is on. Choose your action:
+# 1. Stay at place, so you can attack.
+# 2. Move left to avoid fire.
+# 3. Move right to avoid it jumping on you.
+# 4. Hide behind rock to avoid flight attack..'''))
+#
+#     if user_input == 1 and attack == 1:
+#         print(
+#             'You hide behind rock, whelp tried to get in the air and hit you with his face, but hit rock. It is dead!')
+#         whelp.add_loot('Bronze Helm')
+#         print(f'''
+#         You defeated the monster and got a Bronze Helm!
+#         Inventory update: {player_inventory}''')
+#         break
+#     elif user_input == 2 and attack == 2:
+#         print(
+#             'You hide behind rock, whelp tried to get in the air and hit you with his face, but hit rock. It is dead!')
+#         whelp.add_loot('Bronze Helm')
+#         print(f'''
+#         You defeated the monster and got a Bronze Helm!
+#         Inventory update: {player_inventory}''')
+#         break
+#     elif user_input == 3 and attack == 3:
+#         print(
+#             'You hide behind rock, whelp tried to get in the air and hit you with his face, but hit rock. It is dead!')
+#         whelp.add_loot('Bronze Helm')
+#         print(f'''
+#         You defeated the monster and got a Bronze Helm!
+#         Inventory update: {player_inventory}''')
+#         break
+#     elif user_input == 4 and attack == 4:
+#         print('''You hide behind rock, whelp tried to get in the air and hit you with his face,
+#         but hit rock. It is dead!''')
+#         whelp.add_loot('Bronze Helm')
+#         print(f'''
+# You defeated the monster and got a Bronze Helm!
+# Inventory update: {player_inventory}''')
+#         break
+#     else:
+#         print(f'Oh no! You guessed {user_input} scenario. But the dragon had {attack} scenario!')
+#         player_stats.hp -= whelp.damage
+#         print(f'You have {player_stats.hp} left!')
+#         if player_stats.hp <= 0:
+#             print("You died!")
+#             continue
 
 
 main_menu()

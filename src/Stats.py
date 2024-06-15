@@ -10,7 +10,6 @@ class Stats:
     def __str__(self):
         return (f"HP: {self.hp}, MP: {self.mp}\n"
                 f"STR: {self.str}, AGI: {self.agi}\n"
-                f"GEAR: {self.gear}\n"
                 f"{self.gold}")
 
 
