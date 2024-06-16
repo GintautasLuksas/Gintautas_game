@@ -14,5 +14,19 @@ class Inventory:
     def has_item(self, item):
         return item in self.inside
 
+    def equip_item(self, item, player_stats):
+        if item in self.inside:
+            item.modify_stats(player_stats)
+            print(f"Equipped {item} successfully.")
+        else:
+            print(f"Item '{item}' not found in inventory.")
+
+    def unequip_item(self, item, player_stats):
+        if item in self.inside:
+            item.revert_stats(player_stats)
+            print(f"Unequipped {item} successfully.")
+        else:
+            print(f"Item '{item}' not found in inventory.")
+
     def __str__(self):
-        return f"Inventory: {', '.join(self.inside) if self.inside else 'empty'}"
+        return f"Inventory: {', '.join(str(item) for item in self.inside) if self.inside else 'empty'}"
